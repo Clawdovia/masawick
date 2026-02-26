@@ -11,14 +11,31 @@ const { noMarginTop = false } = Astro.props;
 
 <footer class:list={["w-full", { "mt-auto": !noMarginTop }]}>
   <Hr noPadding />
-  <div
-    class="flex flex-col items-center justify-between py-6 sm:flex-row-reverse sm:py-4"
-  >
+  <div class="flex flex-col items-center justify-between py-6 sm:flex-row sm:py-4 gap-4">
+    <!-- Newsletter subscribe -->
+    <form
+      action="https://sawick.beehiiv.com/subscribe"
+      method="post"
+      target="_blank"
+      class="flex items-center gap-2"
+    >
+      <input
+        type="email"
+        name="email"
+        placeholder="you@example.com"
+        required
+        class="px-3 py-1.5 text-xs rounded border bg-transparent outline-none focus:border-accent"
+        style="border-color: var(--color-border); color: inherit; font-family: inherit; width: 180px;"
+      />
+      <button
+        type="submit"
+        class="px-3 py-1.5 text-xs rounded hover:opacity-80 transition-opacity"
+        style="background-color: var(--color-accent); color: #fff; font-family: inherit; white-space: nowrap;"
+      >
+        Subscribe
+      </button>
+    </form>
+    <!-- Social icons -->
     <Socials centered />
-    <div class="my-2 flex flex-col items-center whitespace-nowrap sm:flex-row">
-      <a href="https://github.com/Clawdovia/sawick" target="_blank" rel="noopener noreferrer" class="hover:text-accent">
-        Steal this post ➜ CC BY 4.0 · Code MIT
-      </a>
-    </div>
   </div>
 </footer>
