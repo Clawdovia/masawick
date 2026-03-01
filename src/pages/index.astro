@@ -1,7 +1,10 @@
 ---
 import { getCollection } from "astro:content";
 import IconArrowRight from "@/assets/icons/IconArrowRight.svg";
+import IconBrandX from "@/assets/icons/IconBrandX.svg";
+import IconTelegram from "@/assets/icons/IconTelegram.svg";
 import IconRss from "@/assets/icons/IconRss.svg";
+import IconMail from "@/assets/icons/IconMail.svg";
 import Card from "@/components/Card.astro";
 import Footer from "@/components/Footer.astro";
 import Header from "@/components/Header.astro";
@@ -85,11 +88,20 @@ const recentPosts = posts2025AndLater.filter(({ data }) => !data.featured);
 
           <!-- Follow -->
           <div class="mt-5">
-            <p class="text-xs font-mono uppercase tracking-widest opacity-50 mb-2">Follow the build</p>
-            <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm">
-              <a href="https://aiscaffold.dev" class="hover:text-accent transition-colors">Newsletter</a>
-              <a href="https://x.com/sawick_" class="hover:text-accent transition-colors">@sawick_</a>
-              <a href="https://t.me/aiscaffolding" class="hover:text-accent transition-colors">Telegram</a>
+            <p class="text-xs font-mono uppercase tracking-widest opacity-50 mb-3">Follow the build</p>
+            <div class="flex gap-4 items-center">
+              <a href="https://x.com/sawick_" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" title="@sawick_ on X" class="opacity-60 hover:opacity-100 hover:text-accent transition-all">
+                <IconBrandX width={22} height={22} />
+              </a>
+              <a href="https://t.me/aiscaffolding" target="_blank" rel="noopener noreferrer" aria-label="Telegram" title="@aiscaffolding on Telegram" class="opacity-60 hover:opacity-100 hover:text-accent transition-all">
+                <IconTelegram width={22} height={22} />
+              </a>
+              <a href="https://aiscaffold.dev" target="_blank" rel="noopener noreferrer" aria-label="Newsletter" title="AI Scaffold Newsletter" class="opacity-60 hover:opacity-100 hover:text-accent transition-all">
+                <IconRss width={22} height={22} />
+              </a>
+              <a href="mailto:me@sawick.me" aria-label="Email" title="me@sawick.me" class="opacity-60 hover:opacity-100 hover:text-accent transition-all">
+                <IconMail width={22} height={22} />
+              </a>
             </div>
           </div>
 
